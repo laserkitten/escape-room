@@ -6,12 +6,16 @@
   </head>
   <script>
     var status = '';
+    var liquid = 0;
     function initialize() {
       const url_params = new URLSearchParams(window.location.search);
       if (url_params.has('status')) {
-        status = url_params.get('status');}
+        status = url_params.get('status');
+        liquid = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'].indexOf(status[1]);
+        if (liquid > 7) {
+          document.getElementById('text').innerHTML = 'You look closer at the metal stove. Someone has written the numbers 6, 22, and 12 onto the rusty surface using beet syrup. It\'s quite tasty.';}
       else {
-        window.location.href = 'present.html?status=0';}}
+        window.location.href = 'present.html?status=00';}}
     function leave() {
       window.location.href = 'present.html?status=' + status;}
   </script>
@@ -23,6 +27,7 @@
         <path id='arrow' onclick='leave();' d='M 313.00,334.00 C 313.00,334.00 309.00,334.00 309.00,334.00 309.00,334.00 318.00,347.00 318.00,347.00 318.00,347.00 320.00,347.00 320.00,347.00 320.00,347.00 329.00,334.00 329.00,334.00 329.00,334.00 324.00,334.00 324.00,334.00 324.00,334.00 324.00,317.00 324.00,317.00 321.72,317.00 316.34,316.64 314.60,318.02 312.12,319.98 313.00,330.71 313.00,334.00 Z' />        
       </svg>
       <p id='text'>You look closer at the metal stove. Someone has written the numbers 6, 22, and 12 onto the rusty surface using a thick reddish liquid. Could it be blood?</p>
+      <input class='button' type='button' value='Inspect the liquid.' onclick='inspect();'>
     </div>
   </body>
 </html>
