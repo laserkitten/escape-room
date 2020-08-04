@@ -1,0 +1,28 @@
+<!-- This page can be found at https://laserkitten.github.io/escape-room -->
+<html>
+  <head>
+    <title>The Present by @laserkitten</title>
+  	<link href="css/laserkitten.css" rel="stylesheet" type="text/css">
+  </head>
+  <script>
+    var status = '';
+    function initialize() {
+      const url_params = new URLSearchParams(window.location.search);
+      if (url_params.has('status')) {
+        status = url_params.get('status');}
+      else {
+        window.location.href = 'present.html?status=0';}}
+    function leave() {
+      window.location.href = 'present.html?status=' + status;}
+  </script>
+  <body onload='initialize();'>
+    <div class='content'>
+      <p class='title'>The Present, an Online Escape Room</p>
+      <svg width='640' height='360'>
+        <image xlink:href='img/stove.jpg' />
+        <path id='arrow' d='M 313.00,334.00 C 313.00,334.00 309.00,334.00 309.00,334.00 309.00,334.00 318.00,347.00 318.00,347.00 318.00,347.00 320.00,347.00 320.00,347.00 320.00,347.00 329.00,334.00 329.00,334.00 329.00,334.00 324.00,334.00 324.00,334.00 324.00,334.00 324.00,317.00 324.00,317.00 321.72,317.00 316.34,316.64 314.60,318.02 312.12,319.98 313.00,330.71 313.00,334.00 Z' />        
+      </svg>
+      <p id='text'>You stand in the kitchen of your uncle's basement. This is where he pickles the produce that is stored in a shelf to your left. There is also a wine cellar further in the back.</p>
+    </div>
+  </body>
+</html>
