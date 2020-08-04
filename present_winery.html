@@ -10,10 +10,10 @@
     function reload () {
       tmp_pic = 1 + (tmp_pic + 1) % 3;
       var str = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'][4*tmp_pic+state_pic];
-      window.location.href = 'file:///D:/PHP/escape/present_winery.html?status=' + str;}
+      window.location.href = 'present_winery.html?status=' + str;}
     function leave () {
       var str = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'][state_pic];
-      window.location.href = 'file:///D:/PHP/escape/present.html?status=' + str;}
+      window.location.href = 'present.html?status=' + str;}
     function initialize() {
       const url_params = new URLSearchParams(window.location.search);
       if (url_params.has('status')) {
