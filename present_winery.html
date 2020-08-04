@@ -4,17 +4,134 @@
     <title>The Present by @laserkitten</title>
   	 <link href="css/laserkitten.css" rel="stylesheet" type="text/css">
   </head>
-  <script>   
+  <script>
+    var state_pic = 0;
+    var tmp_pic = 0;
+    function reload () {
+      tmp_pic = 1 + (tmp_pic + 1) % 3;
+      var str = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'][4*tmp_pic+state_pic];
+      window.location.href = 'file:///D:/PHP/escape/present_winery.html?status=' + str;}
+    function leave () {
+      var str = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'][state_pic];
+      window.location.href = 'file:///D:/PHP/escape/present.html?status=' + str;}
     function initialize() {
       const url_params = new URLSearchParams(window.location.search);
       if (url_params.has('status')) {
-        var test = url_params.get('status');}
-      else  {
-        window.location.href = 'present_winery.html?status=set';}}
+        var status = url_params.get('status');
+        var i = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'].indexOf(status[0]);
+        state_pic = i%4;
+        tmp_pic = Math.floor(i/4);
+        if (tmp_pic > 0) {
+          if (state_pic == 3) {
+            document.getElementById('text').innerHTML = 'As you push against the crate\'s lid, you hear a clicking sound behind the painting. There is now a crack between the painting and the wall.';}
+          else {
+            document.getElementById('text').innerHTML = 'You push against the crate\'s lid, but nothing seems to happen.';}
+        if (state_pic == 3) {
+          document.getElementById('picture').onclick = function() {picture_1()};}}}
+      else {
+        window.location.href = 'present_winery.html?status=0';}}
+    function press_0() {
+      reload();}
+    function press_a() {
+      state_pic = 1;
+      reload();}
+    function press_b() {
+      if (state_pic == 1) {
+        state_pic = 2;}
+      reload();}
+    function press_c() {
+      if (state_pic == 2) {
+        state_pic = 3;}
+      reload();}
     function picture_0() {
+      document.getElementById('button_0').type = 'hidden';
       document.getElementById('text').innerHTML = 'The painting shows olives and olive branches next to a decanter filled with oil. It is firmly attached to the wall and cannot be moved. How peculiar.';}
+    function picture_1() {
+      document.getElementById('button_0').type = 'hidden';
+      document.getElementById('text').innerHTML = 'The painting shows olives and olive branches next to a decanter filled with oil. It is now slightly detached from the wall. You move your fingers into the crack and open the hidden compartment behing the painting.<br><br>It contains a jar with pickled onions and a little note saying \'Happy Birthday!\' Congratulations, you solved the puzzle and truly earned your magnificient present.';}
     function bottles_0() {
+      document.getElementById('button_0').type = 'hidden';
       document.getElementById('text').innerHTML = 'The bottles are empty and neatly arranged. Someone circled individual letters on the labels. It takes you a moment, but from left to right it reads \'B E T T E R N O T O P E N T H E P I C K L E D C A R R O T S\' (top row) and \'P U S H I N O R D E R O F A L P H A B E T\' (bottom row).';}
+    function button_1() {
+      document.getElementById('button_0').type = 'button';
+      document.getElementById('button_0').value = 'Push the button.';
+      document.getElementById('button_0').onclick = function() {press_0()};
+      document.getElementById('text').innerHTML = 'The crate reads \'Iquique\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+    function button_2() {
+      document.getElementById('button_0').type = 'button';
+      document.getElementById('button_0').value = 'Push the button.';
+      document.getElementById('button_0').onclick = function() {press_0()};
+      document.getElementById('text').innerHTML = 'The crate reads \'Bergen\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+    function button_3() {
+      document.getElementById('button_0').type = 'button';
+      document.getElementById('button_0').value = 'Push the button.';
+      document.getElementById('button_0').onclick = function() {press_b()};
+      document.getElementById('text').innerHTML = 'The crate reads \'Helsingborg\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+    function button_4() {
+      document.getElementById('button_0').type = 'button';
+      document.getElementById('button_0').value = 'Push the button.';
+      document.getElementById('button_0').onclick = function() {press_0()};
+      document.getElementById('text').innerHTML = 'The crate reads \'Jasenica\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+    function button_5() {
+      document.getElementById('button_0').type = 'button';
+      document.getElementById('button_0').value = 'Push the button.';
+      document.getElementById('button_0').onclick = function() {press_0()};
+      document.getElementById('text').innerHTML = 'The crate reads \'Koursk\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+    function button_6() {
+      document.getElementById('button_0').type = 'button';
+      document.getElementById('button_0').value = 'Push the button.';
+      document.getElementById('button_0').onclick = function() {press_0()};
+      document.getElementById('text').innerHTML = 'The crate reads \'Glasgow\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+    function button_7() {
+      document.getElementById('button_0').type = 'button';
+      document.getElementById('button_0').value = 'Push the button.';
+      document.getElementById('button_0').onclick = function() {press_c()};
+      document.getElementById('text').innerHTML = 'The crate reads \'Rio de Janeiro\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+    function button_8() {
+      document.getElementById('button_0').type = 'button';
+      document.getElementById('button_0').value = 'Push the button.';
+      document.getElementById('button_0').onclick = function() {press_0()};
+      document.getElementById('text').innerHTML = 'The crate reads \'Anvers\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+    function button_9() {
+      document.getElementById('button_0').type = 'button';
+      document.getElementById('button_0').value = 'Push the button.';
+      document.getElementById('button_0').onclick = function() {press_0()};
+      document.getElementById('text').innerHTML = 'The crate reads \'Hambourg\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+    function button_10() {
+      document.getElementById('button_0').type = 'button';
+      document.getElementById('button_0').value = 'Push the button.';
+      document.getElementById('button_0').onclick = function() {press_a()};
+      document.getElementById('text').innerHTML = 'The crate reads \'Bristol\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+    function button_11() {
+      document.getElementById('button_0').type = 'button';
+      document.getElementById('button_0').value = 'Push the button.';
+      document.getElementById('button_0').onclick = function() {press_0()};
+      document.getElementById('text').innerHTML = 'The crate reads \'Haarlem\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+    function button_12() {
+      document.getElementById('button_0').type = 'button';
+      document.getElementById('button_0').value = 'Push the button.';
+      document.getElementById('button_0').onclick = function() {press_0()};
+      document.getElementById('text').innerHTML = 'The crate reads \'Point a Pitre\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+    function button_13() {
+      document.getElementById('button_0').type = 'button';
+      document.getElementById('button_0').value = 'Push the button.';
+      document.getElementById('button_0').onclick = function() {press_0()};
+      document.getElementById('text').innerHTML = 'The crate reads \'Harkin\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+    function button_14() {
+      document.getElementById('button_0').type = 'button';
+      document.getElementById('button_0').value = 'Push the button.';
+      document.getElementById('button_0').onclick = function() {press_0()};
+      document.getElementById('text').innerHTML = 'The crate reads \'Glasgow\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+    function button_15() {
+      document.getElementById('button_0').type = 'button';
+      document.getElementById('button_0').value = 'Push the button.';
+      document.getElementById('button_0').onclick = function() {press_0()};
+      document.getElementById('text').innerHTML = 'The crate reads \'Bergen\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+    function button_16() {
+      document.getElementById('button_0').type = 'button';
+      document.getElementById('button_0').value = 'Push the button.';
+      document.getElementById('button_0').onclick = function() {press_0()};
+      document.getElementById('text').innerHTML = 'The crate reads \'Negociants\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
   </script>
   <body onload='initialize();'>
     <div class='content'>
@@ -23,25 +140,26 @@
         <image xlink:href='img/wine-cellar.jpg' />
         <path id='picture' onclick='picture_0();' d='M 237.00,36.00 C 237.00,36.00 237.00, 162.00 237.00,162.00 237.00,162.00 392.00,162.00 392.00,162.00 392.00,162.00 392.00,36.00 392.00,36.00 392.00,36.00 237.00,36.00 237.00,36.00 Z' />
         <path id='bottles' onclick='bottles_0();' d='M 45.00,172.00 C 43.53,179.81 41.04,187.01 41.00,195.00 40.99,197.81 40.71,205.68 41.60,207.91 42.63,210.53 45.88,213.03 48.00,214.87 51.99,218.33 61.66,227.33 66.00,228.97 66.00,228.97 86.96,233.23 86.96,233.23 93.20,235.34 92.89,242.39 96.63,245.01  98.30,246.17 101.04,245.99 103.00,245.96 103.00,245.96 118.00,245.96 118.00,245.96 118.00,245.96 130.00,245.00 130.00,245.00 130.00,245.00 145.00,245.00 145.00,245.00 145.00,245.00 133.00,280.00 133.00,280.00 133.00,280.00 180.00,280.00 180.00,280.00 180.00,280.00 195.00,279.00 195.00,279.00 195.00,279.00 292.00,279.00 292.00,279.00 292.00,279.00 307.00,278.00 307.00,278.00 307.00,278.00 403.00,278.00 403.00,278.00 403.00,278.00 420.00,277.00 420.00,277.00 420.00,277.00 481.00,277.00 481.00,277.00 489.75,277.00 516.28,277.91 523.00,276.00 523.00,276.00 510.00,245.00 510.00,245.00 510.00,245.00 526.81,244.00 526.81,244.00 526.81,244.00 526.81,202.00 526.81,202.00 526.81,202.00 520.00,187.00 520.00,187.00 517.13,188.24 513.71,189.66 511.39,191.79 508.10,194.79 501.31,209.42 500.00,214.00 493.85,204.77 494.00,201.02 483.00,201.00 483.00,201.00 421.00,201.00 421.00,201.00 421.00,201.00 312.00,201.00 312.00,201.00 312.00,201.00 297.00,200.00 297.00,200.00 297.00,200.00 196.00,200.00 196.00,200.00 196.00,200.00 133.00,200.00 133.00,200.00 118.21,200.00 114.15,197.54 109.00,208.00 109.00,208.00 107.00,208.00 107.00,208.00 107.00,208.00 100.00,196.00 100.00,196.00 100.00,196.00 96.00,207.00 96.00,207.00 96.00,207.00 85.00,180.00 85.00,180.00 85.00,180.00 78.00,194.00 78.00,194.00 78.00,194.00 67.00,176.00 67.00,176.00 67.00,176.00 59.00,211.00 59.00,211.00 59.00,211.00 45.00,172.00 45.00,172.00 Z' />
-        <path id='b1' d='M 120.00,283.00 C 120.00,283.00 120.00,324.00 120.00,324.00 120.00,324.00 216.00,324.00 216.00,324.00 216.00,324.00 216.00,283.00 216.00,283.00 216.00,283.00 120.00,283.00 120.00,283.00 Z' />
-        <path id='b2' d='M 220.00,283.00 C 220.00,283.00 220.00,323.00 220.00,323.00 220.00,323.00 317.00,323.00 317.00,323.00 317.00,323.00 317.00,283.00 317.00,283.00 317.00,283.00 220.00,283.00 220.00,283.00 Z' />
-        <path id='b3' d='M 323.00,283.00 C 323.00,283.00 323.00,323.00 323.00,323.00 323.00,323.00 421.00,323.00 421.00,323.00 421.00,323.00 421.00,283.00 421.00,283.00 421.00,283.00 323.00,283.00 323.00,283.00 Z' />
-        <path id='b4' d='M 425.00,282.00 C 425.00,282.00 425.00,322.00 425.00,322.00 425.00,322.00 522.00,322.00 522.00,322.00 522.00,322.00 522.00,282.00 522.00,282.00 522.00,282.00 425.00,282.00 425.00,282.00 Z' />
-        <path id='b5' d='M 120.00,327.00 C 120.00,327.00 120.00,366.00 120.00,366.00 120.00,366.00 216.00,366.00 216.00,366.00 216.00,366.00 216.00,327.00 216.00,327.00 216.00,327.00 120.00,327.00 120.00,327.00 Z' />
-        <path id='b6' d='M 221.00,327.00 C 221.00,327.00 221.00,367.00 221.00,367.00 221.00,367.00 317.00,367.00 317.00,367.00 317.00,367.00 317.00,327.00 317.00,327.00 317.00,327.00 221.00,327.00 221.00,327.00 Z' />
-        <path id='b7' d='M 323.00,328.00 C 323.00,328.00 323.00,366.00 323.00,366.00 323.00,366.00 420.00,366.00 420.00,366.00 420.00,366.00 420.00,328.00 420.00,328.00 420.00,328.00 323.00,328.00 323.00,328.00 Z' />
-        <path id='b8' d='M 426.00,326.00 C 426.00,326.00 426.00,365.00 426.00,365.00 426.00,365.00 521.00,365.00 521.00,365.00 521.00,365.00 521.00,326.00 521.00,326.00 521.00,326.00 426.00,326.00 426.00,326.00 Z' />
-        <path id='b9' d='M 123.00,370.00 C 123.00,370.00 123.00,409.00 123.00,409.00 123.00,409.00 216.00,409.00 216.00,409.00 216.00,409.00 216.00,370.00 216.00,370.00 216.00,370.00 123.00,370.00 123.00,370.00 Z' />
-        <path id='b10' d='M 221.00,371.00 C 221.00,371.00 221.00,410.00 221.00,410.00 221.00,410.00 318.00,410.00 318.00,410.00 318.00,410.00 318.00,371.00 318.00,371.00 318.00,371.00 221.00,371.00 221.00,371.00 Z' />
-        <path id='b11' d='M 323.00,371.00 C 323.00,371.00 323.00,410.00 323.00,410.00 323.00,410.00 420.00,410.00 420.00,410.00 420.00,410.00 420.00,371.00 420.00,371.00 420.00,371.00 323.00,371.00 323.00,371.00 Z' />
-        <path id='b12' d='M 425.00,370.00 C 425.00,370.00 425.00,408.00 425.00,408.00 425.00,408.00 520.00,408.00 520.00,408.00 520.00,408.00 520.00,370.00 520.00,370.00 520.00,370.00 425.00,370.00 425.00,370.00 Z' />
-        <path id='b13' d='M 123.00,413.00 C 123.00,413.00 123.00,452.00 123.00,452.00 123.00,452.00 216.00,452.00 216.00,452.00 216.00,452.00 216.00,413.00 216.00,413.00 216.00,413.00 123.00,413.00 123.00,413.00 Z' />
-        <path id='b14' d='M 223.00,414.00 C 223.00,414.00 223.00,455.00 223.00,455.00 223.00,455.00 312.00,455.00 312.00,455.00 312.00,455.00 312.00,451.00 312.00,451.00 312.00,451.00 318.00,451.00 318.00,451.00 318.00,451.00 318.00,414.00 318.00,414.00 318.00,414.00 223.00,414.00 223.00,414.00 Z' />
-        <path id='b15' d='M 323.00,415.00 C 323.00,415.00 323.00,451.00 323.00,451.00 323.00,451.00 333.00,453.00 333.00,453.00 333.00,453.00 361.00,453.00 361.00,453.00 361.00,453.00 419.00,453.00 419.00,453.00 419.00,453.00 419.00,415.00 419.00,415.00 419.00,415.00 323.00,415.00 323.00,415.00 Z' />
-        <path id='b16' d='M 423.00,413.00 C 423.00,413.00 423.00,453.00 423.00,453.00 423.00,453.00 520.00,453.00 520.00,453.00 520.00,453.00 520.00,413.00 520.00,413.00 520.00,413.00 423.00,413.00 423.00,413.00 Z' />
-        <path id='arrow_main' d='M 315.00,453.00 C 315.00,453.00 315.00,469.00 315.00,469.00 315.00,469.00 310.00,469.00 310.00,469.00 311.43,472.18 316.03,479.80 319.97,479.80 323.52,479.80 327.68,472.85 329.00,470.00 329.00,470.00 325.00,469.00 325.00,469.00 325.00,469.00 325.00,453.00 325.00,453.00 325.00,453.00 315.00,453.00 315.00,453.00 Z' />
+        <path id='b1' onclick='button_1();' d='M 120.00,283.00 C 120.00,283.00 120.00,324.00 120.00,324.00 120.00,324.00 216.00,324.00 216.00,324.00 216.00,324.00 216.00,283.00 216.00,283.00 216.00,283.00 120.00,283.00 120.00,283.00 Z' />
+        <path id='b2' onclick='button_2();' d='M 220.00,283.00 C 220.00,283.00 220.00,323.00 220.00,323.00 220.00,323.00 317.00,323.00 317.00,323.00 317.00,323.00 317.00,283.00 317.00,283.00 317.00,283.00 220.00,283.00 220.00,283.00 Z' />
+        <path id='b3' onclick='button_3();' d='M 323.00,283.00 C 323.00,283.00 323.00,323.00 323.00,323.00 323.00,323.00 421.00,323.00 421.00,323.00 421.00,323.00 421.00,283.00 421.00,283.00 421.00,283.00 323.00,283.00 323.00,283.00 Z' />
+        <path id='b4' onclick='button_4();' d='M 425.00,282.00 C 425.00,282.00 425.00,322.00 425.00,322.00 425.00,322.00 522.00,322.00 522.00,322.00 522.00,322.00 522.00,282.00 522.00,282.00 522.00,282.00 425.00,282.00 425.00,282.00 Z' />
+        <path id='b5' onclick='button_5();' d='M 120.00,327.00 C 120.00,327.00 120.00,366.00 120.00,366.00 120.00,366.00 216.00,366.00 216.00,366.00 216.00,366.00 216.00,327.00 216.00,327.00 216.00,327.00 120.00,327.00 120.00,327.00 Z' />
+        <path id='b6' onclick='button_6();' d='M 221.00,327.00 C 221.00,327.00 221.00,367.00 221.00,367.00 221.00,367.00 317.00,367.00 317.00,367.00 317.00,367.00 317.00,327.00 317.00,327.00 317.00,327.00 221.00,327.00 221.00,327.00 Z' />
+        <path id='b7' onclick='button_7();' d='M 323.00,328.00 C 323.00,328.00 323.00,366.00 323.00,366.00 323.00,366.00 420.00,366.00 420.00,366.00 420.00,366.00 420.00,328.00 420.00,328.00 420.00,328.00 323.00,328.00 323.00,328.00 Z' />
+        <path id='b8' onclick='button_8();' d='M 426.00,326.00 C 426.00,326.00 426.00,365.00 426.00,365.00 426.00,365.00 521.00,365.00 521.00,365.00 521.00,365.00 521.00,326.00 521.00,326.00 521.00,326.00 426.00,326.00 426.00,326.00 Z' />
+        <path id='b9' onclick='button_9();' d='M 123.00,370.00 C 123.00,370.00 123.00,409.00 123.00,409.00 123.00,409.00 216.00,409.00 216.00,409.00 216.00,409.00 216.00,370.00 216.00,370.00 216.00,370.00 123.00,370.00 123.00,370.00 Z' />
+        <path id='b10' onclick='button_10();' d='M 221.00,371.00 C 221.00,371.00 221.00,410.00 221.00,410.00 221.00,410.00 318.00,410.00 318.00,410.00 318.00,410.00 318.00,371.00 318.00,371.00 318.00,371.00 221.00,371.00 221.00,371.00 Z' />
+        <path id='b11' onclick='button_11();' d='M 323.00,371.00 C 323.00,371.00 323.00,410.00 323.00,410.00 323.00,410.00 420.00,410.00 420.00,410.00 420.00,410.00 420.00,371.00 420.00,371.00 420.00,371.00 323.00,371.00 323.00,371.00 Z' />
+        <path id='b12' onclick='button_12();' d='M 425.00,370.00 C 425.00,370.00 425.00,408.00 425.00,408.00 425.00,408.00 520.00,408.00 520.00,408.00 520.00,408.00 520.00,370.00 520.00,370.00 520.00,370.00 425.00,370.00 425.00,370.00 Z' />
+        <path id='b13' onclick='button_13();' d='M 123.00,413.00 C 123.00,413.00 123.00,452.00 123.00,452.00 123.00,452.00 216.00,452.00 216.00,452.00 216.00,452.00 216.00,413.00 216.00,413.00 216.00,413.00 123.00,413.00 123.00,413.00 Z' />
+        <path id='b14' onclick='button_14();' d='M 223.00,414.00 C 223.00,414.00 223.00,455.00 223.00,455.00 223.00,455.00 312.00,455.00 312.00,455.00 312.00,455.00 312.00,451.00 312.00,451.00 312.00,451.00 318.00,451.00 318.00,451.00 318.00,451.00 318.00,414.00 318.00,414.00 318.00,414.00 223.00,414.00 223.00,414.00 Z' />
+        <path id='b15' onclick='button_15();' d='M 323.00,415.00 C 323.00,415.00 323.00,451.00 323.00,451.00 323.00,451.00 333.00,453.00 333.00,453.00 333.00,453.00 361.00,453.00 361.00,453.00 361.00,453.00 419.00,453.00 419.00,453.00 419.00,453.00 419.00,415.00 419.00,415.00 419.00,415.00 323.00,415.00 323.00,415.00 Z' />
+        <path id='b16' onclick='button_16();' d='M 423.00,413.00 C 423.00,413.00 423.00,453.00 423.00,453.00 423.00,453.00 520.00,453.00 520.00,453.00 520.00,453.00 520.00,413.00 520.00,413.00 520.00,413.00 423.00,413.00 423.00,413.00 Z' />
+        <path id='arrow_main' onclick='leave()' d='M 315.00,453.00 C 315.00,453.00 315.00,469.00 315.00,469.00 315.00,469.00 310.00,469.00 310.00,469.00 311.43,472.18 316.03,479.80 319.97,479.80 323.52,479.80 327.68,472.85 329.00,470.00 329.00,470.00 325.00,469.00 325.00,469.00 325.00,469.00 325.00,453.00 325.00,453.00 325.00,453.00 315.00,453.00 315.00,453.00 Z' />
       </svg>
-      <p id='text'>You stand in front of neatly stacked wine crates in a vault beneath the mansion. Decorative wine bottles are arranged on top of them. Your uncle is a wine connoisseur and will talk about wine at any opportune moment. You should move on quickly! </p>
+      <p id='text'>You stand in front of neatly stacked wine crates in a vault beneath the mansion. Decorative wine bottles are arranged on top of them. Your uncle is a wine connoisseur and will talk about wine at any opportune moment. You should move on quickly!</p>
+      <input class='button' id='button_0' type='hidden' value='exit'>
     </div>
   </body>
 </html>
