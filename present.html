@@ -5,18 +5,18 @@
   	 <link href="css/laserkitten.css" rel="stylesheet" type="text/css">
   </head>
   <script>
-    var url = '';
+    var status = '';
     function initialize() {
       if (url_params.has('status')) {
         var status = url_params.get('status');}
       else {
         window.location.href = 'present.html?status=0';}}
     function leave_left() {
-      window.location.href = 'present_shelf.html?status=' + url;}
+      window.location.href = 'present_shelf.html?status=' + status;}
     function leave_stove() {
-      window.location.href = 'present_stove.html?status=' + url;}
+      window.location.href = 'present_stove.html?status=' + status;}
     function leave_winery() {
-      window.location.href = 'present_winery.html?status=' + url;}
+      window.location.href = 'present_winery.html?status=' + status;}
   </script>
   <body onload='initialize();'>
     <div class='content'>
