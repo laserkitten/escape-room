@@ -7,6 +7,7 @@
   <script>
     var status = '';
     function initialize() {
+      const url_params = new URLSearchParams(window.location.search);
       if (url_params.has('status')) {
         status = url_params.get('status');
         document.getElementById('text').innerHTML = status;}
