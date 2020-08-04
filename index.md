@@ -1,5 +1,5 @@
-### 1. The Will
+### 1. The Present
 
-It has been a week since you opened the letter from your grandfather's estate. Apparently, the old man has hidden his will in the cellar beneath the mansion, and only those who can find it will be able to claim their inheritance. He's always been a little odd. Well, here you are – eager to find what is yours. [Click here to start your quest!](will_winery.html)
+It is your birthday, and your uncle has invited you to celebrate in his mansion. As a present, he prepared a treasure hunt in the cellar beneath the mansion. You were hoping for a check, but he is a weird one. Well, here you are – eager to find what is yours. [Click here to start your quest!](will_winery.html)
 
-![letters](img/letter.jpg)
+![letters](img/present.jpg)
