@@ -1,0 +1,20 @@
+body {
+  background-color: black;
+  color: #cdb48c;
+  font-family: arial;
+  font-size: 20px;
+  text-align: justify;}
+
+hr {
+  background-color: #cdb48c;
+  border: none;
+  color: #cdb48c;
+  height: 2px;}
+
+.content {
+  margin: auto;
+  max-width: 640px;}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;}
