@@ -11,6 +11,11 @@ hr {
   color: #cdb48c;
   height: 2px;}
 
+path {
+  cursor: pointer;
+  fill: rgba(0,0,0,0);
+  stroke-width: 0;}
+
 .content {
   margin: auto;
   max-width: 640px;}
