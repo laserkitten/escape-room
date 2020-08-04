@@ -5,19 +5,20 @@
   	 <link href="css/laserkitten.css" rel="stylesheet" type="text/css">
   </head>
   <script>
+    var status;
     var state_pic = 0;
     var tmp_pic = 0;
     function reload () {
       tmp_pic = 1 + (tmp_pic + 1) % 3;
-      var str = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'][4*tmp_pic+state_pic];
-      window.location.href = 'present_winery.html?status=' + str;}
+      status[0] = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'][4*tmp_pic+state_pic];
+      window.location.href = 'present_winery.html?status=' + status;}
     function leave () {
-      var str = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'][state_pic];
-      window.location.href = 'present.html?status=' + str;}
+      status[0] = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'][state_pic];
+      window.location.href = 'present.html?status=' + status;}
     function initialize() {
       const url_params = new URLSearchParams(window.location.search);
       if (url_params.has('status')) {
-        var status = url_params.get('status');
+        status = url_params.get('status');
         var i = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'].indexOf(status[0]);
         state_pic = i%4;
         tmp_pic = Math.floor(i/4);
@@ -29,7 +30,7 @@
         if (state_pic == 3) {
           document.getElementById('picture').onclick = function() {picture_1()};}}}
       else {
-        window.location.href = 'present_winery.html?status=0';}}
+        window.location.href = 'present_winery.html?status=00';}}
     function press_0() {
       reload();}
     function press_a() {
