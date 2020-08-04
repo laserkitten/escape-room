@@ -5,12 +5,28 @@
   	 <link href="css/laserkitten.css" rel="stylesheet" type="text/css">
   </head>
   <script>
+    var url = '';
+    function initialize() {
+      if (url_params.has('status')) {
+        var status = url_params.get('status');}
+      else {
+        window.location.href = 'present.html?status=0';}}
+    function leave_left() {
+      window.location.href = 'present_shelf.html?status=' + url;}
+    function leave_stove() {
+      window.location.href = 'present_stove.html?status=' + url;}
+    function leave_winery() {
+      window.location.href = 'present_winery.html?status=' + url;}
   </script>
   <body onload='initialize();'>
     <div class='content'>
       <p class='title'>The Present, an Online Escape Room</p>
       <svg width='640' height='423'>
         <image xlink:href='img/main.jpg' />
+        <path id='wood' d='M 253.00,412.00 C 253.00,412.00 274.00,404.68 274.00,404.68 274.00,404.68 319.00,387.42 319.00,387.42 319.00,387.42 335.00,381.20 335.00,381.20 335.00,381.20 341.90,377.49 341.90,377.49 341.90,377.49 341.90,369.00 341.90,369.00 341.90,369.00 339.00,349.00 339.00,349.00 335.02,348.47 326.28,347.74 323.32,345.42 319.82,342.65 316.33,334.43 312.68,331.93 310.29,330.30 295.33,328.24 292.00,328.27 288.03,328.32 285.18,330.56 282.00,332.67 269.97,340.63 272.15,338.38 266.72,351.00 262.63,360.50 254.12,377.21 254.00,387.00 254.00,387.00 253.00,412.00 253.00,412.00 Z' />
+        <path id='arrow_back' onclick='leave_winery();' d='M 603.00,203.00 C 603.00,203.00 594.00,215.00 594.00,215.00 594.00,215.00 599.00,216.00 599.00,216.00 599.00,216.00 599.00,232.00 599.00,232.00 599.00,232.00 610.00,232.00 610.00,232.00 610.00,232.00 610.00,216.00 610.00,216.00 610.00,216.00 614.00,216.00 614.00,216.00 612.44,210.69 607.91,205.52 603.00,203.00 Z' />
+        <path id='arrow_left' onclick='leave_left();' d='M 27.00,303.00 C 27.00,303.00 27.00,298.00 27.00,298.00 27.00,298.00 43.00,298.00 43.00,298.00 43.00,298.00 43.00,287.00 43.00,287.00 43.00,287.00 27.00,287.00 27.00,287.00 27.00,287.00 27.00,283.00 27.00,283.00 23.78,284.10 15.20,289.12 15.20,293.00 15.20,296.68 23.92,301.79 27.00,303.00 Z' />
+        <path id='arrow_stove' onclick='leave_stove();' d='M 211.00,175.00 C 207.26,179.07 203.57,182.61 202.00,188.00 202.00,188.00 206.00,188.00 206.00,188.00 206.00,188.00 206.00,204.00 206.00,204.00 206.00,204.00 217.00,204.00 217.00,204.00 217.00,204.00 217.00,188.00 217.00,188.00 217.00,188.00 222.00,187.00 222.00,187.00 222.00,187.00 211.00,175.00 211.00,175.00 Z' />
       </svg>
       <p id='text'>You stand in front of the kitchen of your uncle's basement. This is where he pickles the produce that is stored in a shelf to your left. There is also a wine cellar further in the back.</p>
     </div>
