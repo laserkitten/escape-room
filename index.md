@@ -1,4 +1,4 @@
-The following projects rely on Javascript, so please enable it in your browser. Also, avoid refreshing the page as well as hitting return, as it might cause unintended behavior. Enjoy at your own risk!
+The following projects rely on Javascript, so please enable it in your browser. Also, avoid refreshing the page as well as hitting return, as it might cause unintended behavior. You can find the source code at github.com. Enjoy at your own risk!
 
 ### 1. The Present
 
