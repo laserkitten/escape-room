@@ -5,54 +5,212 @@
   	 <link href="css/laserkitten.css" rel="stylesheet" type="text/css">
   </head>
   <script>
-    var status;
-    var state_pic = 0;
-    var tmp_pic = 0;
-    function reload () {
-      tmp_pic = 1 + (tmp_pic + 1) % 3;
-      status[0] = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'][4*tmp_pic+state_pic];
+    var pic_state;
+    var pic_decoy;
+    var liquid;
+    var wood;
+    var jar_1;
+    var jar_2;
+    var jar_3;
+    var jar_4;
+    var jar_5;
+    var jar_6;
+    var jar_7;
+    var jar_8;
+    var jar_9;
+    var jar_10;
+    var jar_11;
+    var jar_12;
+    var jar_13;
+    function reload() {
+      pic_decoy = 1 + (pic_decoy + 1) % 3;
+      var status = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'][pic_state+4*pic_decoy];
+      var i = liquid;
+      if (wood) {
+        i = i + 4;}
+      if (jar_1) {
+        i = i + 8;}
+      status = status + ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'][i];
+      if (jar_2) {
+        i = 1;}
+      else {
+        i = 0;}
+      if (jar_3) {
+        i = i + 2;}
+      if (jar_4) {
+        i = i + 4;}
+      if (jar_5) {
+        i = i + 8;}
+      status = status + ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'][i];
+      if (jar_6) {
+        i = 1;}
+      else {
+        i = 0;}
+      if (jar_7) {
+        i = i + 2;}
+      if (jar_8) {
+        i = i + 4;}
+      if (jar_9) {
+        i = i + 8;}
+      status = status + ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'][i];
+      if (jar_10) {
+        i = 1;}
+      else {
+        i = 0;}
+      if (jar_11) {
+        i = i + 2;}
+      if (jar_12) {
+        i = i + 4;}
+      if (jar_13) {
+        i = i + 8;}
+      status = status + ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'][i];
       window.location.href = 'present_winery.html?status=' + status;}
-    function leave () {
-      status[0] = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'][state_pic];
+    function leave() {
+      var status = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'][pic_state];
+      var i = liquid;
+      if (wood) {
+        i = i + 4;}
+      if (jar_1) {
+        i = i + 8;}
+      status = status + ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'][i];
+      if (jar_2) {
+        i = 1;}
+      else {
+        i = 0;}
+      if (jar_3) {
+        i = i + 2;}
+      if (jar_4) {
+        i = i + 4;}
+      if (jar_5) {
+        i = i + 8;}
+      status = status + ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'][i];
+      if (jar_6) {
+        i = 1;}
+      else {
+        i = 0;}
+      if (jar_7) {
+        i = i + 2;}
+      if (jar_8) {
+        i = i + 4;}
+      if (jar_9) {
+        i = i + 8;}
+      status = status + ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'][i];
+      if (jar_10) {
+        i = 1;}
+      else {
+        i = 0;}
+      if (jar_11) {
+        i = i + 2;}
+      if (jar_12) {
+        i = i + 4;}
+      if (jar_13) {
+        i = i + 8;}
+      status = status + ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'][i];
       window.location.href = 'present.html?status=' + status;}
+    function advance() {
+      var status = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'][pic_state];
+      var i = liquid;
+      if (wood) {
+        i = i + 4;}
+      if (jar_1) {
+        i = i + 8;}
+      status = status + ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'][i];
+      if (jar_2) {
+        i = 1;}
+      else {
+        i = 0;}
+      if (jar_3) {
+        i = i + 2;}
+      if (jar_4) {
+        i = i + 4;}
+      if (jar_5) {
+        i = i + 8;}
+      status = status + ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'][i];
+      if (jar_6) {
+        i = 1;}
+      else {
+        i = 0;}
+      if (jar_7) {
+        i = i + 2;}
+      if (jar_8) {
+        i = i + 4;}
+      if (jar_9) {
+        i = i + 8;}
+      status = status + ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'][i];
+      if (jar_10) {
+        i = 1;}
+      else {
+        i = 0;}
+      if (jar_11) {
+        i = i + 2;}
+      if (jar_12) {
+        i = i + 4;}
+      if (jar_13) {
+        i = i + 8;}
+      status = status + ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'][i];
+      window.location.href = 'present_win.html?status=' + status;}
     function initialize() {
       const url_params = new URLSearchParams(window.location.search);
       if (url_params.has('status')) {
-        status = url_params.get('status');
-        var i = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'].indexOf(status[0]);
-        state_pic = i%4;
-        tmp_pic = Math.floor(i/4);
-        if (tmp_pic > 0) {
-          if (state_pic == 3) {
+        var status = url_params.get('status');
+        var i  = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'].indexOf(status[0]);
+        pic_state = i%4;
+        pic_decoy = Math.floor(i/4);
+        i      = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'].indexOf(status[1]);
+        liquid = i%4;
+        wood   = ((Math.floor(i/4)-2*Math.floor(i/8))>0);
+        jar_1  = (Math.floor(i/8)>0);
+        i      = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'].indexOf(status[2]);
+        var s  = i.toString(2) + '000';
+        jar_2  = (s[0]=='1');
+        jar_3  = (s[1]=='1');
+        jar_4  = (s[2]=='1');
+        jar_5  = (s[3]=='1');
+        i      = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'].indexOf(status[3]);
+        s      = i.toString(2) + '000';
+        jar_6  = (s[0]=='1');
+        jar_7  = (s[1]=='1');
+        jar_8  = (s[2]=='1');
+        jar_9  = (s[3]=='1');
+        i      = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'].indexOf(status[4]);
+        s      = i.toString(2) + '000';
+        jar_10 = (s[0]=='1');
+        jar_11 = (s[1]=='1');
+        jar_12 = (s[2]=='1');
+        jar_13 = (s[3]=='1');
+        if (pic_decoy > 0) {
+          if (pic_state == 3) {
             document.getElementById('text').innerHTML = 'As you push against the crate\'s lid, you hear a clicking sound behind the painting. There is now a crack between the painting and the wall.';}
           else {
-            document.getElementById('text').innerHTML = 'You push against the crate\'s lid, but nothing seems to happen.';}
-        if (state_pic == 3) {
-          document.getElementById('picture').onclick = function() {picture_1()};}}}
+            document.getElementById('text').innerHTML = 'You push against the crate\'s lid, but nothing seems to happen.';}}
+        if (pic_state == 3) {
+          document.getElementById('picture').onclick = function() {picture_1()};}}
       else {
-        window.location.href = 'present_winery.html?status=00';}}
+        window.location.href = 'present_winery.html?status=00000';}}
     function press_0() {
       reload();}
     function press_a() {
-      state_pic = 1;
+      pic_state = 1;
       reload();}
     function press_b() {
-      if (state_pic == 1) {
-        state_pic = 2;}
+      if (pic_state == 1) {
+        pic_state = 2;}
       reload();}
     function press_c() {
-      if (state_pic == 2) {
-        state_pic = 3;}
+      if (pic_state == 2) {
+        pic_state = 3;}
       reload();}
     function picture_0() {
       document.getElementById('button_0').type = 'hidden';
       document.getElementById('text').innerHTML = 'The painting shows olives and olive branches next to a decanter filled with oil. It is firmly attached to the wall and cannot be moved. How peculiar.';}
     function picture_1() {
-      document.getElementById('button_0').type = 'hidden';
-      document.getElementById('text').innerHTML = 'The painting shows olives and olive branches next to a decanter filled with oil. It is now slightly detached from the wall. You move your fingers into the crack and open the hidden compartment behing the painting.<br><br>It contains a jar with pickled onions and a little note saying \'Happy Birthday!\' Congratulations, you solved the puzzle and truly earned your magnificient present.';}
+      document.getElementById('button_0').type = 'button';
+      document.getElementById('button_0').value = 'Open the hidden compartment.';
+      document.getElementById('button_0').onclick = function() {advance()};
+      document.getElementById('text').innerHTML = 'The painting shows olives and olive branches next to a decanter filled with oil. It is now slightly detached from the wall. You move your fingers into the crack and open the hidden compartment behing the painting.';}
     function bottles_0() {
       document.getElementById('button_0').type = 'hidden';
-      document.getElementById('text').innerHTML = 'The bottles are empty and neatly arranged. Someone circled individual letters on the labels. It takes you a moment, but from left to right it reads \'B E T T E R N O T O P E N T H E P I C K L E D C A R R O T S\' (top row) and \'P U S H I N O R D E R O F A L P H A B E T\' (bottom row).';}
+      document.getElementById('text').innerHTML = 'The bottles are empty and neatly arranged. Someone circled individual letters on the labels. It takes you a moment, but from left to right it reads \'BETTER NOT OPEN THE PICKLED CARROTS\' (top row) and \'PUSH IN ORDER OF ALPHABET\' (bottom row). Some bottles have no markings; those seem to indicate white space.';}
     function button_1() {
       document.getElementById('button_0').type = 'button';
       document.getElementById('button_0').value = 'Push the button.';
@@ -112,7 +270,7 @@
       document.getElementById('button_0').type = 'button';
       document.getElementById('button_0').value = 'Push the button.';
       document.getElementById('button_0').onclick = function() {press_0()};
-      document.getElementById('text').innerHTML = 'The crate reads \'Point a Pitre\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+      document.getElementById('text').innerHTML = 'The crate reads \'Pointe-à-Pitre\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
     function button_13() {
       document.getElementById('button_0').type = 'button';
       document.getElementById('button_0').value = 'Push the button.';
