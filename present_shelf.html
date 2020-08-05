@@ -1,0 +1,305 @@
+<!-- This page can be found at https://laserkitten.github.io/escape-room -->
+<html>
+  <head>
+    <title>The Present by @laserkitten</title>
+  	 <link href="css/laserkitten.css" rel="stylesheet" type="text/css">
+  </head>
+  <script>
+    var pic_state;
+    var pic_decoy;
+    var liquid;
+    var wood;
+    var jar_1;
+    var jar_2;
+    var jar_3;
+    var jar_4;
+    var jar_5;
+    var jar_6;
+    var jar_7;
+    var jar_8;
+    var jar_9;
+    var jar_10;
+    var jar_11;
+    var jar_12;
+    var jar_13;
+    function initialize() {
+      const url_params = new URLSearchParams(window.location.search);
+      if (url_params.has('status')) {
+        var status = url_params.get('status');
+        var i  = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'].indexOf(status[0]);
+        pic_state = i%4;
+        pic_decoy = Math.floor(i/4);
+        i      = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'].indexOf(status[1]);
+        liquid = i%4;
+        wood   = ((Math.floor(i/4)-2*Math.floor(i/8))>0);
+        jar_1  = (Math.floor(i/8)>0);
+        i      = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'].indexOf(status[2]);
+        var s  = i.toString(2) + '000';
+        jar_2  = (s[0]=='1');
+        jar_3  = (s[1]=='1');
+        jar_4  = (s[2]=='1');
+        jar_5  = (s[3]=='1');
+        i      = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'].indexOf(status[3]);
+        s      = i.toString(2) + '000';
+        jar_6  = (s[0]=='1');
+        jar_7  = (s[1]=='1');
+        jar_8  = (s[2]=='1');
+        jar_9  = (s[3]=='1');
+        i      = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'].indexOf(status[4]);
+        s      = i.toString(2) + '000';
+        jar_10 = (s[0]=='1');
+        jar_11 = (s[1]=='1');
+        jar_12 = (s[2]=='1');
+        jar_13 = (s[3]=='1');
+        if (jar_1) {
+          document.getElementById('raddish').onclick = function() {raddish_1()};}
+        if (jar_2) {
+          document.getElementById('kraut').onclick = function() {kraut_1()};}
+        if (jar_3) {
+          document.getElementById('shrooms').onclick = function() {shrooms_1()};}
+        if (jar_4) {
+          document.getElementById('beans').onclick = function() {beans_1()};}
+        if (jar_5) {
+          document.getElementById('carrots').onclick = function() {carrots_1()};}
+        if (jar_6) {
+          document.getElementById('pickles').onclick = function() {pickles_1()};}
+        if (jar_7) {
+          document.getElementById('cabbage').onclick = function() {cabbage_1()};}
+        if (jar_8) {
+          document.getElementById('peppers').onclick = function() {peppers_1()};}
+        if (jar_9) {
+          document.getElementById('okra').onclick = function() {okra_1()};}
+        if (jar_10) {
+          document.getElementById('zucchini').onclick = function() {zucchini_1()};}
+        if (jar_11) {
+          document.getElementById('jalapenos').onclick = function() {jalapenos_1()};}
+        if (jar_12) {
+          document.getElementById('olives').onclick = function() {olives_1()};}
+        if (jar_13) {
+          document.getElementById('beets').onclick = function() {beets_1()};}}
+      else {
+        window.location.href = 'present_shelf.html?status=00000';}}
+    function leave() {
+      var status = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'][pic_state];
+      var i = liquid;
+      if (wood) {
+      i = i + 4;}
+      if (jar_1) {
+      i = i + 8;}
+      status = status + ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'][i];
+      if (jar_2) {
+      i = 1;}
+      else {
+      i = 0;}
+      if (jar_3) {
+      i = i + 2;}
+      if (jar_4) {
+      i = i + 4;}
+      if (jar_5) {
+      i = i + 8;}
+      status = status + ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'][i];
+      if (jar_6) {
+      i = 1;}
+      else {
+      i = 0;}
+      if (jar_7) {
+      i = i + 2;}
+      if (jar_8) {
+      i = i + 4;}
+      if (jar_9) {
+      i = i + 8;}
+      status = status + ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'][i];
+      if (jar_10) {
+      i = 1;}
+      else {
+      i = 0;}
+      if (jar_11) {
+      i = i + 2;}
+      if (jar_12) {
+      i = i + 4;}
+      if (jar_13) {
+      i = i + 8;}
+      status = status + ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'][i];
+      window.location.href = 'present.html?status=' + status;}
+    function raddish_0() {
+      document.getElementById('button_0').type = 'button';
+      document.getElementById('button_0').value = 'Open the jar.';
+      document.getElementById('button_0').onclick = function() {open_raddish()};
+      document.getElementById('text').innerHTML = 'A jar filled with partially disintegrated raddishes.';}
+    function kraut_0() {
+      document.getElementById('button_0').type = 'button';
+      document.getElementById('button_0').value = 'Open the jar.';
+      document.getElementById('button_0').onclick = function() {open_kraut()};
+      document.getElementById('text').innerHTML = 'Is that sauerkraut? You\'re not quite sure and don\'t feel like asking.';}
+    function shrooms_0() {
+      document.getElementById('button_0').type = 'button';
+      document.getElementById('button_0').value = 'Open the jar.';
+      document.getElementById('button_0').onclick = function() {open_shrooms()};
+      document.getElementById('text').innerHTML = 'A jar filled with pickled mushrooms. The liquid in there looks like glue.';}
+    function beans_0() {
+      document.getElementById('button_0').type = 'button';
+      document.getElementById('button_0').value = 'Open the jar.';
+      document.getElementById('button_0').onclick = function() {open_beans()};
+      document.getElementById('text').innerHTML = 'A jar filled with green beans.';}
+    function carrots_0() {
+      document.getElementById('button_0').type = 'button';
+      document.getElementById('button_0').value = 'Open the jar.';
+      document.getElementById('button_0').onclick = function() {open_carrots()};
+      document.getElementById('text').innerHTML = 'Carrot slices are neatly stacked in this jar.';}
+    function pickles_0() {
+      document.getElementById('button_0').type = 'button';
+      document.getElementById('button_0').value = 'Open the jar.';
+      document.getElementById('button_0').onclick = function() {open_pickles()};
+      document.getElementById('text').innerHTML = 'A jar filled with pickled cucumbers. You can see some mustard seeds floating around.';}
+    function cabbage_0() {
+      document.getElementById('button_0').type = 'button';
+      document.getElementById('button_0').value = 'Open the jar.';
+      document.getElementById('button_0').onclick = function() {open_cabbage()};
+      document.getElementById('text').innerHTML = 'This jar is filled with what looks like exploded cabbage.';}
+    function peppers_0() {
+      document.getElementById('button_0').type = 'button';
+      document.getElementById('button_0').value = 'Open the jar.';
+      document.getElementById('button_0').onclick = function() {open_peppers()};
+      document.getElementById('text').innerHTML = 'Green peppers or maybe something more spicy. Only one way to find out.';}
+    function okra_0() {
+      document.getElementById('button_0').type = 'button';
+      document.getElementById('button_0').value = 'Open the jar.';
+      document.getElementById('button_0').onclick = function() {open_okra()};
+      document.getElementById('text').innerHTML = 'A jar filled with pickled okra.';}
+    function zucchini_0() {
+      document.getElementById('button_0').type = 'button';
+      document.getElementById('button_0').value = 'Open the jar.';
+      document.getElementById('button_0').onclick = function() {open_zucchini()};
+      document.getElementById('text').innerHTML = 'Zucchini slices are layered in this jar.';}
+    function jalapenos_0() {
+      document.getElementById('button_0').type = 'button';
+      document.getElementById('button_0').value = 'Open the jar.';
+      document.getElementById('button_0').onclick = function() {open_jalapenos()};
+      document.getElementById('text').innerHTML = 'These look like pickled jalapeños.';}
+    function olives_0() {
+      document.getElementById('button_0').type = 'button';
+      document.getElementById('button_0').value = 'Open the jar.';
+      document.getElementById('button_0').onclick = function() {open_olives()};
+      document.getElementById('text').innerHTML = 'Olives in a jar. You can also see a few garlic cloves.';}
+    function beets_0() {
+      document.getElementById('button_0').type = 'button';
+      document.getElementById('button_0').value = 'Open the jar.';
+      document.getElementById('button_0').onclick = function() {open_beets()};
+      document.getElementById('text').innerHTML = 'A jar filled with pickled beet roots. What an intense color.';}
+    function raddish_1() {
+      document.getElementById('button_0').type = 'hidden';
+      document.getElementById('text').innerHTML = 'A jar filled with partially disintegrated raddishes. They smell rather spicy. Someone wrote \'Bergen\' on the inside of the lid.';}
+    function kraut_1() {
+      document.getElementById('button_0').type = 'hidden';
+      document.getElementById('text').innerHTML = 'This sure smells like sauerkraut! Someone wrote \'Harkin\' on the inside of the lid.';}
+    function shrooms_1() {
+      document.getElementById('button_0').type = 'hidden';
+      document.getElementById('text').innerHTML = 'A jar filled with pickled mushrooms. The liquid barely moves as you move the jar. Someone wrote \'Pointe-à-Pitre\' on the inside of the lid.';}
+    function beans_1() {
+      document.getElementById('button_0').type = 'hidden';
+      document.getElementById('text').innerHTML = 'A jar filled with green beans. Someone wrote \'Jasenica\' on the inside of the lid.';}
+    function carrots_1() {
+      document.getElementById('button_0').type = 'hidden';
+      document.getElementById('text').innerHTML = 'Something went wrong here - what a foul smell. As you quickly close the jar, you read \'I told you not to open this one!\' on the inside of the lid.';}
+    function pickles_1() {
+      document.getElementById('button_0').type = 'hidden';
+      document.getElementById('text').innerHTML = 'A jar filled with pickled cucumbers. You can see some mustard seeds floating around. It has a rather sweet smell. Someone wrote \'Iquique\' on the inside of the lid.';}
+    function cabbage_1() {
+      document.getElementById('button_0').type = 'hidden';
+      document.getElementById('text').innerHTML = 'This jar is filled with what looks like exploded cabbage. Someone wrote \'Koursk\' on the inside of the lid.';}
+    function peppers_1() {
+      document.getElementById('button_0').type = 'hidden';
+      document.getElementById('text').innerHTML = 'Definitely green peppers. Someone wrote \'Negociants\' on the inside of the lid.';}
+    function okra_1() {
+      document.getElementById('button_0').type = 'hidden';
+      document.getElementById('text').innerHTML = 'A jar filled with pickled okra. Someone wrote \'Glasgow\' on the inside of the lid.';}
+    function zucchini_1() {
+      document.getElementById('button_0').type = 'hidden';
+      document.getElementById('text').innerHTML = 'Zucchini slices are layered in this jar. Someone wrote \'Hambourg\' on the inside of the lid.';}
+    function jalapenos_1() {
+      document.getElementById('button_0').type = 'hidden';
+      document.getElementById('text').innerHTML = 'These look and smell like pickled jalapeños. Someone wrote \'Bristol\' on the inside of the lid.';}
+    function olives_1() {
+      document.getElementById('button_0').type = 'hidden';
+      document.getElementById('text').innerHTML = 'Olives in a jar. You can now see and smell quite a few garlic cloves. Someone wrote \'Helsingborg\' on the inside of the lid.';}
+    function beets_1() {
+      document.getElementById('button_0').type = 'hidden';
+      document.getElementById('text').innerHTML = 'A jar filled with pickled beet roots. The liquid looks exactly like the one on the stove. Someone wrote \'Haarlem\' on the inside of the lid.';}
+    function open_raddish() {
+      jar_1 = true;
+      document.getElementById('raddish').onclick = function() {raddish_1()};
+      raddish_1();}
+    function open_kraut() {
+      jar_2 = true;
+      document.getElementById('kraut').onclick = function() {kraut_1()};
+      kraut_1();}
+    function open_shrooms() {
+      jar_3 = true;
+      document.getElementById('shrooms').onclick = function() {shrooms_1()};
+      shrooms_1();}
+    function open_beans() {
+      jar_4 = true;
+      document.getElementById('beans').onclick = function() {beans_1()};
+      beans_1();}
+    function open_carrots() {
+      jar_5 = true;
+      document.getElementById('carrots').onclick = function() {carrots_1()};
+      carrots_1();}
+    function open_pickles() {
+      jar_6 = true;
+      document.getElementById('pickles').onclick = function() {pickles_1()};
+      pickles_1();}
+    function open_cabbage() {
+      jar_7 = true;
+      document.getElementById('cabbage').onclick = function() {cabbage_1()};
+      cabbage_1();}
+    function open_peppers() {
+      jar_8 = true;
+      document.getElementById('peppers').onclick = function() {peppers_1()};
+      peppers_1();}
+    function open_okra() {
+      jar_9 = true;
+      document.getElementById('okra').onclick = function() {okra_1()};
+      okra_1();}
+    function open_zucchini() {
+      jar_10 = true;
+      document.getElementById('zucchini').onclick = function() {zucchini_1()};
+      zucchini_1();}
+    function open_jalapenos() {
+      jar_11 = true;
+      document.getElementById('jalapenos').onclick = function() {jalapenos_1()};
+      jalapenos_1();}
+    function open_olives() {
+      jar_12 = true;
+      document.getElementById('olives').onclick = function() {olives_1()};
+      olives_1();}
+    function open_beets() {
+      jar_13 = true;
+      document.getElementById('beets').onclick = function() {beets_1()};
+      beets_1();}
+  </script>
+  <body onload='initialize();'>
+    <div class='content'>
+      <p class='title'>The Present, an Online Escape Room</p>
+      <svg width='640' height='426'>
+        <image xlink:href='img/shelf.jpg' />
+        <path id='raddish' onclick='raddish_0();' d='M 126.00,64.00 C 126.00,64.00 128.00,190.96 128.00,190.96 128.00,190.96 140.00,190.96 140.00,190.96 140.00,190.96 151.00,190.00 151.00,190.00 151.00,190.00 166.00,190.00 166.00,190.00 166.00,190.00 187.89,189.00 187.89,189.00 187.89,189.00 187.89,129.00 187.89,129.00 187.89,129.00 187.89,100.00 187.89,100.00 187.89,100.00 185.00,91.00 185.00,91.00 185.00,91.00 179.00,73.00 179.00,73.00 179.00,73.00 175.30,64.99 175.30,64.99 175.30,64.99 168.00,64.00 168.00,64.00 168.00,64.00 126.00,64.00 126.00,64.00 Z' />
+        <path id='kraut' onclick='kraut_0();' d='M 190.00,99.00 C 190.00,99.00 190.00,190.00 190.00,190.00 190.00,190.00 237.96,190.00 237.96,190.00 237.96,190.00 237.96,178.00 237.96,178.00 237.96,178.00 237.00,166.00 237.00,166.00 237.00,166.00 236.00,122.00 236.00,122.00 236.00,122.00 235.00,99.00 235.00,99.00 235.00,99.00 190.00,99.00 190.00,99.00 Z' />
+        <path id='shrooms' onclick='shrooms_0();' d='M 241.00,190.00 C 241.00,190.00 256.00,190.00 256.00,190.00 256.00,190.00 271.00,189.00 271.00,189.00 271.00,189.00 301.00,189.00 301.00,189.00 301.00,189.00 300.00,159.00 300.00,159.00 300.00,159.00 300.00,105.00 300.00,105.00 300.00,105.00 294.00,67.00 294.00,67.00 294.00,67.00 258.00,67.00 258.00,67.00 255.78,67.00 252.30,66.78 250.41,68.02 248.19,69.49 246.60,74.49 245.60,77.00 241.87,86.40 238.02,93.77 238.00,104.00 238.00,104.00 239.00,143.00 239.00,143.00 239.00,143.00 239.96,155.00 239.96,155.00 239.96,155.00 239.96,169.00 239.96,169.00 239.96,169.00 241.00,190.00 241.00,190.00 Z' />
+        <path id='beans' onclick='beans_0();' d='M 304.00,66.00 C 304.00,66.00 304.00,98.00 304.00,98.00 304.00,98.00 305.00,115.00 305.00,115.00 305.00,115.00 305.00,187.00 305.00,187.00 305.00,187.00 356.00,186.00 356.00,186.00 356.00,186.00 356.00,67.00 356.00,67.00 356.00,67.00 304.00,66.00 304.00,66.00 Z' />
+        <path id='carrots' onclick='carrots_0();' d='M 359.00,69.00 C 359.00,69.00 359.00,145.00 359.00,145.00 359.00,145.00 358.00,184.00 358.00,184.00 358.00,184.00 415.00,184.00 415.00,184.00 415.00,184.00 412.09,138.00 412.09,138.00 412.09,138.00 409.10,97.00 409.10,97.00 409.10,97.00 409.10,88.00 409.10,88.00 409.10,88.00 408.01,79.00 408.01,79.00 408.01,79.00 406.40,71.02 406.40,71.02 406.40,71.02 399.00,70.00 399.00,70.00 399.00,70.00 359.00,69.00 359.00,69.00 Z' />
+        <path id='pickles' onclick='pickles_0();' d='M 418.00,98.00 C 418.00,98.00 418.00,146.00 418.00,146.00 418.00,146.00 417.00,162.00 417.00,162.00 417.00,162.00 417.00,184.00 417.00,184.00 417.00,184.00 448.00,182.91 448.00,182.91 448.00,182.91 461.00,182.00 461.00,182.00 461.00,182.00 472.00,181.00 472.00,181.00 472.00,181.00 481.00,181.00 481.00,181.00 481.00,181.00 499.00,180.00 499.00,180.00 499.00,180.00 499.00,133.00 499.00,133.00 499.00,133.00 498.00,117.00 498.00,117.00 498.00,117.00 498.00,98.00 498.00,98.00 498.00,98.00 418.00,98.00 418.00,98.00 Z' />
+        <path id='cabbage' onclick='cabbage_0();' d='M 503.00,181.00 C 503.00,181.00 535.00,180.00 535.00,180.00 535.00,180.00 548.96,179.00 548.96,179.00 548.96,179.00 548.96,165.00 548.96,165.00 548.96,165.00 548.00,153.00 548.00,153.00 548.00,153.00 548.00,134.00 548.00,134.00 548.00,134.00 547.00,119.00 547.00,119.00 547.00,119.00 547.00,95.00 547.00,95.00 547.00,95.00 525.00,96.00 525.00,96.00 525.00,96.00 512.00,96.00 512.00,96.00 510.01,96.00 506.19,95.77 504.60,97.02 502.05,99.04 503.00,113.32 503.00,117.00 503.00,117.00 503.00,181.00 503.00,181.00 Z' />
+        <path id='peppers' onclick='peppers_0();' d='M 551.00,96.00 C 551.00,96.00 553.00,179.00 553.00,179.00 553.00,179.00 570.00,179.00 570.00,179.00 570.00,179.00 589.00,178.00 589.00,178.00 589.00,178.00 610.00,177.00 610.00,177.00 610.00,177.00 627.00,176.00 627.00,176.00 627.00,176.00 626.00,96.00 626.00,96.00 626.00,96.00 551.00,96.00 551.00,96.00 Z' />
+        <path id='okra' onclick='okra_0();' d='M 120.00,245.00 C 120.00,245.00 120.00,333.00 120.00,333.00 120.00,342.74 120.88,370.27 119.00,378.00 119.00,378.00 141.00,378.00 141.00,378.00 141.00,378.00 153.00,377.04 153.00,377.04 153.00,377.04 168.00,377.04 168.00,377.04 171.85,376.97 173.74,377.13 177.00,374.69 179.78,372.60 183.53,367.48 187.00,367.24 190.76,366.99 193.92,371.74 200.00,371.61 200.00,371.61 249.00,365.00 249.00,365.00 249.00,365.00 247.00,326.00 247.00,326.00 247.00,326.00 246.00,311.00 246.00,311.00 246.00,311.00 245.00,294.00 245.00,294.00 245.00,294.00 244.00,276.00 244.00,276.00 243.89,266.66 244.91,265.06 236.00,265.00 236.00,265.00 185.00,265.00 185.00,265.00 182.40,264.99 178.58,265.33 176.58,263.40 172.82,259.77 174.83,247.71 170.57,245.57 169.15,244.86 165.66,245.00 164.00,245.00 164.00,245.00 120.00,245.00 120.00,245.00 Z' />
+        <path id='zucchini' onclick='zucchini_0();' d='M 247.00,263.00 C 247.00,263.00 256.41,276.00 256.41,276.00 256.41,276.00 257.00,286.00 257.00,286.00 257.00,286.00 256.00,304.00 256.00,304.00 256.00,304.00 255.00,321.00 255.00,321.00 255.00,321.00 254.00,336.00 254.00,336.00 254.00,336.00 253.00,364.00 253.00,364.00 253.00,364.00 307.00,364.00 307.00,364.00 307.00,364.00 308.00,354.00 308.00,354.00 308.00,354.00 347.00,348.00 347.00,348.00 347.92,350.90 349.37,355.07 352.38,356.22 354.92,357.57 361.74,356.09 365.00,356.22 365.00,356.22 400.96,354.00 400.96,354.00 400.96,354.00 400.96,339.00 400.96,339.00 400.96,339.00 400.00,327.00 400.00,327.00 400.00,327.00 399.00,276.00 399.00,276.00 398.98,266.27 398.24,267.36 388.00,262.25 384.99,260.74 380.13,258.06 377.00,257.39 377.00,257.39 352.00,258.00 352.00,258.00 352.00,258.00 340.00,258.96 340.00,258.96 340.00,258.96 329.00,258.96 329.00,258.96 329.00,258.96 314.00,260.00 314.00,260.00 314.00,260.00 266.00,262.00 266.00,262.00 266.00,262.00 247.00,263.00 247.00,263.00 Z' />
+        <path id='jalapenos' onclick='jalapenos_0();' d='M 402.00,265.00 C 402.00,265.00 402.00,315.00 402.00,315.00 402.00,315.00 403.00,331.00 403.00,331.00 403.00,331.00 403.00,351.00 403.00,351.00 403.00,351.00 417.00,351.00 417.00,351.00 417.00,351.00 436.00,350.00 436.00,350.00 436.00,350.00 451.00,349.00 451.00,349.00 451.00,349.00 450.00,330.00 450.00,330.00 450.00,330.00 449.09,320.00 449.09,320.00 449.09,320.00 447.91,295.00 447.91,295.00 447.91,295.00 446.00,267.00 446.00,267.00 446.00,267.00 429.00,266.00 429.00,266.00 429.00,266.00 402.00,265.00 402.00,265.00 Z' />
+        <path id='olives' onclick='olives_0();' d='M 414.00,223.00 C 414.00,223.00 408.00,249.00 408.00,249.00 408.00,249.00 435.00,261.22 435.00,261.22 435.00,261.22 445.98,267.39 445.98,267.39 445.98,267.39 448.17,289.00 448.17,289.00 448.17,289.00 450.00,317.00 450.00,317.00 450.00,317.00 452.00,348.00 452.00,348.00 452.00,348.00 463.00,347.09 463.00,347.09 463.00,347.09 498.00,345.00 498.00,345.00 498.00,345.00 496.00,308.00 496.00,308.00 496.00,308.00 495.00,292.00 495.00,292.00 495.00,292.00 494.00,278.00 494.00,278.00 494.00,278.00 493.00,257.00 493.00,257.00 493.00,257.00 492.00,244.00 492.00,244.00 491.98,241.97 492.23,237.07 491.43,235.42 489.91,232.29 476.71,228.88 473.00,227.67 465.97,225.38 459.44,223.04 452.00,223.00 452.00,223.00 414.00,223.00 414.00,223.00 Z' />
+        <path id='beets' onclick='beets_0();' d='M 495.00,239.00 C 495.00,239.00 496.00,256.00 496.00,256.00 496.00,256.00 497.00,279.00 497.00,279.00 497.00,279.00 498.00,296.00 498.00,296.00 498.00,296.00 499.00,311.00 499.00,311.00 499.00,311.00 500.00,339.00 500.00,339.00 500.00,339.00 535.00,339.00 535.00,339.00 535.00,339.00 552.00,338.00 552.00,338.00 552.00,338.00 576.00,338.00 576.00,338.00 576.00,338.00 592.00,337.00 592.00,337.00 592.00,337.00 622.00,337.00 622.00,337.00 622.00,337.00 622.00,265.00 622.00,265.00 622.00,262.92 622.23,259.26 620.98,257.56 619.57,255.66 615.25,254.92 613.00,254.42 613.00,254.42 592.00,249.79 592.00,249.79 578.41,246.86 549.18,239.02 537.00,239.00 537.00,239.00 495.00,239.00 495.00,239.00 Z' />
+        <path id='arrow' onclick='leave();' d='M 537.00,380.00 C 537.00,380.00 537.00,396.00 537.00,396.00 537.00,396.00 533.00,396.00 533.00,396.00 533.00,396.00 541.00,408.00 541.00,408.00 546.41,406.34 550.43,401.35 552.00,396.00 552.00,396.00 548.00,396.00 548.00,396.00 548.00,396.00 548.00,380.00 548.00,380.00 548.00,380.00 537.00,380.00 537.00,380.00 Z' />
+      </svg>
+      <p id='text'>You stand in front of your uncle's impressive collection of pickled produce. As you take a closer look, you hear his voice from behind: 'Remember that you will have to eat any jar you open.'</p>
+      <input class='button' id='button_0' type='hidden' value='exit'>
+    </div>
+  </body>
+</html>
