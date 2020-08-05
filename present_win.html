@@ -1,0 +1,64 @@
+<!-- This page can be found at https://laserkitten.github.io/escape-room -->
+<html>
+  <head>
+    <title>The Present by @laserkitten</title>
+  	<link href="css/laserkitten.css" rel="stylesheet" type="text/css">
+  </head>
+  <script>
+    var pic_state;
+    var pic_decoy;
+    var liquid;
+    var wood;
+    var jar_1;
+    var jar_2;
+    var jar_3;
+    var jar_4;
+    var jar_5;
+    var jar_6;
+    var jar_7;
+    var jar_8;
+    var jar_9;
+    var jar_10;
+    var jar_11;
+    var jar_12;
+    var jar_13;
+    function initialize() {
+      const url_params = new URLSearchParams(window.location.search);
+      if (url_params.has('status')) {
+        var status = url_params.get('status');
+        var i  = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'].indexOf(status[0]);
+        pic_state = i%4;
+        pic_decoy = Math.floor(i/4);
+        i      = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'].indexOf(status[1]);
+        liquid = i%4;
+        wood   = ((Math.floor(i/4)-2*Math.floor(i/8))>0);
+        jar_1  = (Math.floor(i/8)>0);
+        i      = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'].indexOf(status[2]);
+        var s  = i.toString(2) + '000';
+        jar_2  = (s[0]=='1');
+        jar_3  = (s[1]=='1');
+        jar_4  = (s[2]=='1');
+        jar_5  = (s[3]=='1');
+        i      = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'].indexOf(status[3]);
+        s      = i.toString(2) + '000';
+        jar_6  = (s[0]=='1');
+        jar_7  = (s[1]=='1');
+        jar_8  = (s[2]=='1');
+        jar_9  = (s[3]=='1');
+        i      = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'].indexOf(status[4]);
+        s      = i.toString(2) + '000';
+        jar_10 = (s[0]=='1');
+        jar_11 = (s[1]=='1');
+        jar_12 = (s[2]=='1');
+        jar_13 = (s[3]=='1');}
+      else {
+        window.location.href = 'present.html?status=00000';}}
+  </script>
+  <body onload='initialize();'>
+    <div class='content'>
+      <p class='title'>The Present, an Online Escape Room</p>
+      <img width='640' src='img/cake.jpg'>
+      <p id='text'>You open the hidden compartment and spot a birthday cake. Then, you hear your uncle sing 'Happy Birthday', as he hands you a basket. It contains all the jars of pickled produce you opened in your search. What a glorious present.</p>
+      </div>
+  </body>
+</html>
