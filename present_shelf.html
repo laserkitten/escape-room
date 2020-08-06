@@ -278,6 +278,7 @@
       document.getElementById('beets').onclick = function() {beets_1()};
       beets_1();}
     function hint() {
+      document.getElementById('button_0').type = 'hidden';
       document.getElementById('text').innerHTML = '<span onclick=\'reveal();\'style=\'cursor: pointer;\'>Click here to reveal a hint:</span><br><br><span id=\'hint\' style=\'background-color: #cdb48c;\'>There are clues inside the jars, but you need to locate the right ones. Look for hints in other rooms that identify the two jars you need to open.</span>';}
     function reveal() {
       document.getElementById('hint').style.backgroundColor = 'black';}
