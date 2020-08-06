@@ -153,6 +153,7 @@
         status = status + ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'][i];
         window.location.href = 'present.html?status=' + status;}
     function hint() {
+      document.getElementById('button_0').type = 'hidden';
       document.getElementById('text').innerHTML = '<span onclick=\'reveal();\'style=\'cursor: pointer;\'>Click here to reveal a hint:</span><br><br><span id=\'hint\' style=\'background-color: #cdb48c;\'>Sometimes, clues can be used to solve multiple riddles.</span>';}
     function reveal() {
       document.getElementById('hint').style.backgroundColor = 'black';}
