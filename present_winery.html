@@ -292,6 +292,7 @@
       document.getElementById('button_0').onclick = function() {press_0()};
       document.getElementById('text').innerHTML = 'The crate reads \'Negociants\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
     function hint() {
+      document.getElementById('button_0').type = 'hidden';
       document.getElementById('text').innerHTML = '<span onclick=\'reveal();\'style=\'cursor: pointer;\'>Click here to reveal a hint:</span><br><br><span id=\'hint\' style=\'background-color: #cdb48c;\'>The letters on the bottles contain a clue. Maybe you only have to look at certain bottles? Keep in mind that the unmarked bottles refer to spaces.</span>';}
     function reveal() {
       document.getElementById('hint').style.backgroundColor = 'black';}
