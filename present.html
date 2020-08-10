@@ -201,8 +201,8 @@
       test = test && !document.getElementById('3').checked;
       test = test && !document.getElementById('4').checked;
       test = test && !document.getElementById('5').checked;
-      test = test && document.getElementById('6').checked;
-      test = test && !document.getElementById('7').checked;
+      test = test && !document.getElementById('6').checked;
+      test = test && document.getElementById('7').checked;
       test = test && !document.getElementById('8').checked;
       test = test && !document.getElementById('9').checked;
       if (test) {
@@ -222,7 +222,7 @@
       document.getElementById('text').innerHTML = 'The hatch does not open anymore. Your work here is done.';}
     function hint() {
       document.getElementById('button_0').type = 'hidden';
-      document.getElementById('text').innerHTML = '<span onclick=\'reveal();\'style=\'cursor: pointer;\'>Click here to reveal a hint:</span><br><br><span id=\'hint\' style=\'background-color: #cdb48c;\'>The code on the stove can be used to open the furnace and it will help you understand its content.</span>';}
+      document.getElementById('text').innerHTML = '<span onclick=\'reveal();\'style=\'cursor: pointer;\'>Click here to reveal a hint:</span><br><br><span id=\'hint\' style=\'background-color: #cdb48c;\'>The code on the stove can be used to open the furnace and it will help you understand its contents.</span>';}
     function reveal() {
       document.getElementById('hint').style.backgroundColor = 'black';}
     function furnace_0() {
@@ -249,7 +249,7 @@
       document.getElementById('button_0').type = 'button';
       document.getElementById('button_0').value = 'Pretend to have a warrant.';
       document.getElementById('button_0').onclick = function() {furnace_5()};
-      document.getElementById('text').innerHTML = 'You knock again and say that the content of this furnace is pretinent to an ongoing investigation. The door knows its rights and refuses to open.';}
+      document.getElementById('text').innerHTML = 'You knock again and say that the content of this furnace is pertinent to an ongoing investigation. The door knows its rights and refuses to open.';}
     function furnace_5() {
       document.getElementById('button_0').type = 'button';
       document.getElementById('button_0').value = 'Curse at the door.';
@@ -270,7 +270,7 @@
       document.getElementById('text').innerHTML = 'An old furnace with a rusty door.';}
     function furnace_9() {
       document.getElementById('button_0').type = 'hidden';
-      document.getElementById('text').innerHTML = 'You brace for yet another disappointment, but the door opens this time. Inside the furnace you find a piece of paper:<br><br>Who am I?<br><br>(a) I am rumored to come from Ethiopia.<br>(e) I can be red and green, but cooked I always am green.<br>(i) I have been likened to hands.<br>(o) I can be rather spicy.<br>(u) I grow on trees.<br><br>Only three of these hints are true!';}
+      document.getElementById('text').innerHTML = 'You brace for yet another disappointment, but the door opens this time. Inside the furnace you find a piece of paper:<br><br>Which plant am I?<br><br>(y) I grow on trees.<br>(o) I am rumored to come from Ethiopia.<br>(u) I can be red and green, but cooked I am always green.<br>(r) I have been likened to hands.<br>(s) I can be rather spicy.<br><br>Only three of these hints are true!';}
   </script>
   <body onload='initialize();'>
     <div class='content'>
