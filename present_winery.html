@@ -179,15 +179,11 @@
         jar_12 = (s[2]=='1');
         jar_13 = (s[3]=='1');
         if (pic_decoy > 0) {
-          if (pic_state == 3) {
-            document.getElementById('text').innerHTML = 'As you push against the crate\'s lid, you hear a clicking sound behind the painting. There is now a crack between the painting and the wall.';}
-          else {
-            document.getElementById('text').innerHTML = 'You push against the crate\'s lid, but nothing seems to happen.';}}
-        if (pic_state == 3) {
-          document.getElementById('picture').onclick = function() {picture_1()};}}
+          document.getElementById('text').innerHTML = 'You push against the crate\'s lid, but nothing seems to happen.';}}
       else {
         window.location.href = 'present_winery.html?status=00000';}}
     function press_0() {
+      pic_state = 0;
       reload();}
     function press_a() {
       pic_state = 1;
@@ -195,11 +191,22 @@
     function press_b() {
       if (pic_state == 1) {
         pic_state = 2;}
+      else {
+        pic_state = 0;}
       reload();}
     function press_c() {
       if (pic_state == 2) {
         pic_state = 3;}
+      else {
+        pic_state = 0;}
       reload();}
+    function press_d() {
+     if (pic_state == 3) {
+       document.getElementById('text').innerHTML = 'As you push against the crate\'s lid, you hear a clicking sound behind the painting. There is now a crack between the painting and the wall.';
+       document.getElementById('picture').onclick = function() {picture_1()};}
+     else {
+       pic_state = 0;
+       reload();}}
     function picture_0() {
       document.getElementById('button_0').type = 'hidden';
       document.getElementById('text').innerHTML = 'The painting shows olives and olive branches next to a decanter filled with oil. It is firmly attached to the wall and cannot be moved. How peculiar.';}
@@ -210,90 +217,91 @@
       document.getElementById('text').innerHTML = 'The painting shows olives and olive branches next to a decanter filled with oil. It is now slightly detached from the wall. You move your fingers into the crack and open the hidden compartment behing the painting.';}
     function bottles_0() {
       document.getElementById('button_0').type = 'hidden';
-      document.getElementById('text').innerHTML = 'The bottles are empty and neatly arranged. Someone circled individual letters on the labels. It takes you a moment, but from left to right it reads \'BETTER NOT OPEN THE PICKLED CARROTS\' (top row) and \'PUSH IN ORDER OF ALPHABET\' (bottom row). Some bottles have no markings; those seem to indicate white space.';}
+      document.getElementById('overlay').style.visibility = 'visible';
+      document.getElementById('text').innerHTML = 'The bottles are empty and neatly arranged. Someone circled individual letters on the labels. It takes you a moment to read the hidden message.';}
     function button_1() {
       document.getElementById('button_0').type = 'button';
       document.getElementById('button_0').value = 'Push the button.';
       document.getElementById('button_0').onclick = function() {press_0()};
-      document.getElementById('text').innerHTML = 'The crate reads \'Iquique\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+      document.getElementById('text').innerHTML = 'The crate reads \'Iquique\'. Maybe you should push it?';}
     function button_2() {
       document.getElementById('button_0').type = 'button';
       document.getElementById('button_0').value = 'Push the button.';
       document.getElementById('button_0').onclick = function() {press_0()};
-      document.getElementById('text').innerHTML = 'The crate reads \'Bergen\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+      document.getElementById('text').innerHTML = 'The crate reads \'Bergen\'. Maybe you should push it?';}
     function button_3() {
       document.getElementById('button_0').type = 'button';
       document.getElementById('button_0').value = 'Push the button.';
-      document.getElementById('button_0').onclick = function() {press_b()};
-      document.getElementById('text').innerHTML = 'The crate reads \'Helsingborg\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+      document.getElementById('button_0').onclick = function() {press_c()};
+      document.getElementById('text').innerHTML = 'The crate reads \'Helsingborg\'. Maybe you should push it?';}
     function button_4() {
       document.getElementById('button_0').type = 'button';
       document.getElementById('button_0').value = 'Push the button.';
       document.getElementById('button_0').onclick = function() {press_0()};
-      document.getElementById('text').innerHTML = 'The crate reads \'Jasenica\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+      document.getElementById('text').innerHTML = 'The crate reads \'Jasenica\'. Maybe you should push it?';}
     function button_5() {
       document.getElementById('button_0').type = 'button';
       document.getElementById('button_0').value = 'Push the button.';
       document.getElementById('button_0').onclick = function() {press_0()};
-      document.getElementById('text').innerHTML = 'The crate reads \'Koursk\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+      document.getElementById('text').innerHTML = 'The crate reads \'Koursk\'. Maybe you should push it?';}
     function button_6() {
       document.getElementById('button_0').type = 'button';
       document.getElementById('button_0').value = 'Push the button.';
       document.getElementById('button_0').onclick = function() {press_0()};
-      document.getElementById('text').innerHTML = 'The crate reads \'Glasgow\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+      document.getElementById('text').innerHTML = 'The crate reads \'Glasgow\'. Maybe you should push it?';}
     function button_7() {
       document.getElementById('button_0').type = 'button';
       document.getElementById('button_0').value = 'Push the button.';
-      document.getElementById('button_0').onclick = function() {press_c()};
-      document.getElementById('text').innerHTML = 'The crate reads \'Rio de Janeiro\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+      document.getElementById('button_0').onclick = function() {press_d()};
+      document.getElementById('text').innerHTML = 'The crate reads \'Rio de Janeiro\'. Maybe you should push it?';}
     function button_8() {
       document.getElementById('button_0').type = 'button';
       document.getElementById('button_0').value = 'Push the button.';
       document.getElementById('button_0').onclick = function() {press_0()};
-      document.getElementById('text').innerHTML = 'The crate reads \'Anvers\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+      document.getElementById('text').innerHTML = 'The crate reads \'Anvers\'. Maybe you should push it?';}
     function button_9() {
       document.getElementById('button_0').type = 'button';
       document.getElementById('button_0').value = 'Push the button.';
       document.getElementById('button_0').onclick = function() {press_0()};
-      document.getElementById('text').innerHTML = 'The crate reads \'Hambourg\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+      document.getElementById('text').innerHTML = 'The crate reads \'Hambourg\'. Maybe you should push it?';}
     function button_10() {
       document.getElementById('button_0').type = 'button';
       document.getElementById('button_0').value = 'Push the button.';
       document.getElementById('button_0').onclick = function() {press_a()};
-      document.getElementById('text').innerHTML = 'The crate reads \'Bristol\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+      document.getElementById('text').innerHTML = 'The crate reads \'Bristol\'. Maybe you should push it?';}
     function button_11() {
       document.getElementById('button_0').type = 'button';
       document.getElementById('button_0').value = 'Push the button.';
-      document.getElementById('button_0').onclick = function() {press_0()};
-      document.getElementById('text').innerHTML = 'The crate reads \'Haarlem\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+      document.getElementById('button_0').onclick = function() {press_b()};
+      document.getElementById('text').innerHTML = 'The crate reads \'Haarlem\'. Maybe you should push it?';}
     function button_12() {
       document.getElementById('button_0').type = 'button';
       document.getElementById('button_0').value = 'Push the button.';
       document.getElementById('button_0').onclick = function() {press_0()};
-      document.getElementById('text').innerHTML = 'The crate reads \'Pointe-à-Pitre\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+      document.getElementById('text').innerHTML = 'The crate reads \'Pointe-à-Pitre\'. Maybe you should push it?';}
     function button_13() {
       document.getElementById('button_0').type = 'button';
       document.getElementById('button_0').value = 'Push the button.';
       document.getElementById('button_0').onclick = function() {press_0()};
-      document.getElementById('text').innerHTML = 'The crate reads \'Harkin\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+      document.getElementById('text').innerHTML = 'The crate reads \'Harkin\'. Maybe you should push it?';}
     function button_14() {
       document.getElementById('button_0').type = 'button';
       document.getElementById('button_0').value = 'Push the button.';
       document.getElementById('button_0').onclick = function() {press_0()};
-      document.getElementById('text').innerHTML = 'The crate reads \'Glasgow\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+      document.getElementById('text').innerHTML = 'The crate reads \'Glasgow\'. Maybe you should push it?';}
     function button_15() {
       document.getElementById('button_0').type = 'button';
       document.getElementById('button_0').value = 'Push the button.';
       document.getElementById('button_0').onclick = function() {press_0()};
-      document.getElementById('text').innerHTML = 'The crate reads \'Bergen\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+      document.getElementById('text').innerHTML = 'The crate reads \'Bergen\'. Maybe you should push it?';}
     function button_16() {
       document.getElementById('button_0').type = 'button';
       document.getElementById('button_0').value = 'Push the button.';
       document.getElementById('button_0').onclick = function() {press_0()};
-      document.getElementById('text').innerHTML = 'The crate reads \'Negociants\'. While you cannot open the crate, the lid moves a little when you touch it. Maybe you should push it?';}
+      document.getElementById('text').innerHTML = 'The crate reads \'Negociants\'. Maybe you should push it?';}
     function hint() {
       document.getElementById('button_0').type = 'hidden';
-      document.getElementById('text').innerHTML = '<span onclick=\'reveal();\'style=\'cursor: pointer;\'>Click here to reveal a hint:</span><br><br><span id=\'hint\' style=\'background-color: #cdb48c;\'>The letters on the bottles contain a clue. Maybe you only have to look at certain bottles? Keep in mind that the unmarked bottles refer to spaces.</span>';}
+      document.getElementById('text').innerHTML = '<span onclick=\'reveal();\'style=\'cursor: pointer;\'>Click here to reveal a hint:</span><br><br><span id=\'hint\' style=\'background-color: #cdb48c;\'>The letters on the bottles contain a clue, but  you should only look at certain bottles.</span>';}
     function reveal() {
       document.getElementById('hint').style.backgroundColor = 'black';}
   </script>
@@ -301,8 +309,9 @@
     <div class='content'>
       <p class='title'>The Present, an Online Escape Room</p>
       <svg width='640' height='487'>
-        <image xlink:href='img/wine-cellar.jpg' />
-        <image xlink:href='img/hint_logo.png' style='cursor: pointer;' onclick='hint();' />
+        <image href='img/wine-cellar.jpg' />
+        <image id='overlay' href='img/bottle_font.png' style='visibility: hidden;' />
+        <image href='img/hint_logo.png' style='cursor: pointer;' onclick='hint();' />
         <path id='picture' onclick='picture_0();' d='M 237.00,36.00 C 237.00,36.00 237.00, 162.00 237.00,162.00 237.00,162.00 392.00,162.00 392.00,162.00 392.00,162.00 392.00,36.00 392.00,36.00 392.00,36.00 237.00,36.00 237.00,36.00 Z' />
         <path id='bottles' onclick='bottles_0();' d='M 45.00,172.00 C 43.53,179.81 41.04,187.01 41.00,195.00 40.99,197.81 40.71,205.68 41.60,207.91 42.63,210.53 45.88,213.03 48.00,214.87 51.99,218.33 61.66,227.33 66.00,228.97 66.00,228.97 86.96,233.23 86.96,233.23 93.20,235.34 92.89,242.39 96.63,245.01  98.30,246.17 101.04,245.99 103.00,245.96 103.00,245.96 118.00,245.96 118.00,245.96 118.00,245.96 130.00,245.00 130.00,245.00 130.00,245.00 145.00,245.00 145.00,245.00 145.00,245.00 133.00,280.00 133.00,280.00 133.00,280.00 180.00,280.00 180.00,280.00 180.00,280.00 195.00,279.00 195.00,279.00 195.00,279.00 292.00,279.00 292.00,279.00 292.00,279.00 307.00,278.00 307.00,278.00 307.00,278.00 403.00,278.00 403.00,278.00 403.00,278.00 420.00,277.00 420.00,277.00 420.00,277.00 481.00,277.00 481.00,277.00 489.75,277.00 516.28,277.91 523.00,276.00 523.00,276.00 510.00,245.00 510.00,245.00 510.00,245.00 526.81,244.00 526.81,244.00 526.81,244.00 526.81,202.00 526.81,202.00 526.81,202.00 520.00,187.00 520.00,187.00 517.13,188.24 513.71,189.66 511.39,191.79 508.10,194.79 501.31,209.42 500.00,214.00 493.85,204.77 494.00,201.02 483.00,201.00 483.00,201.00 421.00,201.00 421.00,201.00 421.00,201.00 312.00,201.00 312.00,201.00 312.00,201.00 297.00,200.00 297.00,200.00 297.00,200.00 196.00,200.00 196.00,200.00 196.00,200.00 133.00,200.00 133.00,200.00 118.21,200.00 114.15,197.54 109.00,208.00 109.00,208.00 107.00,208.00 107.00,208.00 107.00,208.00 100.00,196.00 100.00,196.00 100.00,196.00 96.00,207.00 96.00,207.00 96.00,207.00 85.00,180.00 85.00,180.00 85.00,180.00 78.00,194.00 78.00,194.00 78.00,194.00 67.00,176.00 67.00,176.00 67.00,176.00 59.00,211.00 59.00,211.00 59.00,211.00 45.00,172.00 45.00,172.00 Z' />
         <path id='b1' onclick='button_1();' d='M 120.00,283.00 C 120.00,283.00 120.00,324.00 120.00,324.00 120.00,324.00 216.00,324.00 216.00,324.00 216.00,324.00 216.00,283.00 216.00,283.00 216.00,283.00 120.00,283.00 120.00,283.00 Z' />
