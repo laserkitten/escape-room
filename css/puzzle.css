@@ -1,0 +1,114 @@
+.p00 {
+  position: absolute;
+  top: calc(50% - 305px);
+  left: calc(50% - 305px);
+  width: 200px;
+  height: 200px;
+  overflow: hidden;}
+
+.p01 {
+  position: absolute;
+  top: calc(50% - 305px);
+  left: calc(50% - 100px);
+  width: 200px;
+  height: 200px;
+  overflow: hidden;}
+
+.p02 {
+  position: absolute;
+  top: calc(50% - 305px);
+  left: calc(50% + 105px);
+  width: 200px;
+  height: 200px;
+  overflow: hidden;}
+
+.p10 {
+  position: absolute;
+  top: calc(50% - 100px);
+  left: calc(50% - 305px);
+  width: 200px;
+  height: 200px;
+  overflow: hidden;}
+
+.p11 {
+  position: absolute;
+  top: calc(50% - 100px);
+  left: calc(50% - 100px);
+  width: 200px;
+  height: 200px;
+  overflow: hidden;}
+
+.p12 {
+  position: absolute;
+  top: calc(50% - 100px);
+  left: calc(50% + 105px);
+  width: 200px;
+  height: 200px;
+  overflow: hidden;}
+
+.p20 {
+  position: absolute;
+  top: calc(50% + 105px);
+  left: calc(50% - 305px);
+  width: 200px;
+  height: 200px;
+  overflow: hidden;}
+
+.p21 {
+  position: absolute;
+  top: calc(50% + 105px);
+  left: calc(50% - 100px);
+  width: 200px;
+  height: 200px;
+  overflow: hidden;}
+
+.p22 {
+  position: absolute;
+  top: calc(50% + 105px);
+  left: calc(50% + 105px);
+  width: 200px;
+  height: 200px;
+  overflow: hidden;}
+
+.i00 {
+  position: absolute;}
+
+.i01 {
+  position: absolute;
+  left: -200px;
+  top: 0px;}
+
+.i02 {
+  position: absolute;
+  left: -400px;
+  top: 0px;}
+
+.i10 {
+  position: absolute;
+  left: 0px;
+  top: -200px;}
+
+.i11 {
+  position: absolute;
+  left: -200px;
+  top: -200px;}
+
+.i12 {
+  position: absolute;
+  left: -400px;
+  top: -200px;}
+
+.i20 {
+  position: absolute;
+  left: 0px;
+  top: -400px;}
+
+.i21 {
+  position: absolute;
+  left: -200px;
+  top: -400px;}
+
+.i22 {
+  position: absolute;
+  left: -400px;
+  top: -400px;}
